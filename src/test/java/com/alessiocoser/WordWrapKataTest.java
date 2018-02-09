@@ -29,4 +29,9 @@ public class WordWrapKataTest {
     public void OneShortWordShouldNotWrap() throws Exception {
         assertThat(wordWrap.wrap("word", 5), is("word"));
     }
+
+    @Test
+    public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
+        assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
+    }
 }

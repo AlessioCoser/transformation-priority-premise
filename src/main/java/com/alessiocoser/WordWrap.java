@@ -8,6 +8,6 @@ public class WordWrap {
             return "";
         }
 
-        return text;
+        return text.replaceAll(" ", "\n");
     }
 }
