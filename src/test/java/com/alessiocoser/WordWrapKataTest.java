@@ -47,4 +47,9 @@ public class WordWrapKataTest {
         assertThat(wordWrap.wrap("longword", 4), is("long\nword"));
         assertThat(wordWrap.wrap("longerword", 6), is("longer\nword"));
     }
+
+    @Test
+    public void WordLongerThanTwiceLengthShouldBreakTwice() throws Exception {
+        assertThat(wordWrap.wrap("verylongword", 4), is("very\nlong\nword"));
+    }
 }

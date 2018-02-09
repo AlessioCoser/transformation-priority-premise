@@ -15,7 +15,7 @@ public class WordWrap {
             return text;
         }
 
-        return text.substring(0, length) + "\n" + text.substring(length);
+        return text.substring(0, length) + "\n" + wrap(text.substring(length), length);
     }
 
     public class InvalidArgument extends Exception {
