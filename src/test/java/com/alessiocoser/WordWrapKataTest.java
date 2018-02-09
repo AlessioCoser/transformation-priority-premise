@@ -1,24 +1,15 @@
 package com.alessiocoser;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class WordWrapKataTest {
     @Test
-    public void xxx() {
-        assertEquals(1, 12);
-    }
+    public void WrapNullReturnsEmptyString() throws Exception {
+        WordWrap wordWrap = new WordWrap();
 
-    @Test
-    public void yyy() {
-        assertEquals(1, 1);
-    }
-
-    @Ignore
-    @Test
-    public void zzz() {
-        assertEquals(1, 1);
+        assertThat(wordWrap.wrap(null, 10), is(""));
     }
 }
