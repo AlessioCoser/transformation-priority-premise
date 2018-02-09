@@ -34,4 +34,9 @@ public class WordWrapKataTest {
     public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
         assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
     }
+
+    @Test
+    public void ThreeWordsJustOverTheLimitShouldWrapAtSecondWord() throws Exception {
+        assertThat(wordWrap.wrap("word word word", 9), is("word word\nword"));
+    }
 }
