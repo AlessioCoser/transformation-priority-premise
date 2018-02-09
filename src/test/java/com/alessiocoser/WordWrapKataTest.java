@@ -12,4 +12,11 @@ public class WordWrapKataTest {
 
         assertThat(wordWrap.wrap(null, 10), is(""));
     }
+
+    @Test
+    public void WrapEmptyStringReturnsEmptyString() throws Exception {
+        WordWrap wordWrap = new WordWrap();
+
+        assertThat(wordWrap.wrap("", 10), is(""));
+    }
 }
