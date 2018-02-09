@@ -16,8 +16,9 @@ public class WordWrap {
         }
 
         int space = text.indexOf(" ");
-        if (space >= 0)
-            return "word\nword";
+        if (space >= 0) {
+            return text.substring(0, space) + "\n" + text.substring(space + 1);
+        }
 
         return text.substring(0, length) + "\n" + wrap(text.substring(length), length);
     }
