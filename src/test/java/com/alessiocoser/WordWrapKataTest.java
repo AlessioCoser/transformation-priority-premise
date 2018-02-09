@@ -25,6 +25,11 @@ public class WordWrapKataTest {
         assertThat(wordWrap.wrap("", 10), is(""));
     }
 
+    @Test(expected = WordWrap.InvalidArgument.class)
+    public void LengthLessThanOneShouldThrowInvalidArgument() throws Exception {
+        wordWrap.wrap("xxx", 0);
+    }
+
     @Test
     public void OneShortWordShouldNotWrap() throws Exception {
         assertThat(wordWrap.wrap("word", 5), is("word"));
