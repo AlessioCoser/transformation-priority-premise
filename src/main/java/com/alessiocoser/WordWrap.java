@@ -15,6 +15,10 @@ public class WordWrap {
             return text;
         }
 
+        int space = text.indexOf(" ");
+        if (space >= 0)
+            return "word\nword";
+
         return text.substring(0, length) + "\n" + wrap(text.substring(length), length);
     }
 

@@ -36,7 +36,6 @@ public class WordWrapKataTest {
         assertThat(wordWrap.wrap("word", 5), is("word"));
     }
 
-    @Ignore
     @Test
     public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
         assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
