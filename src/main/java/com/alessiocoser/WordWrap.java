@@ -15,7 +15,7 @@ public class WordWrap {
             return text;
         }
 
-        return "long\nword";
+        return text.substring(0, length) + "\n" + text.substring(length);
     }
 
     public class InvalidArgument extends Exception {

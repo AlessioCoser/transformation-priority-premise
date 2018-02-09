@@ -45,5 +45,6 @@ public class WordWrapKataTest {
     @Test
     public void WordLongerThanLengthBreaksAtLength() throws Exception {
         assertThat(wordWrap.wrap("longword", 4), is("long\nword"));
+        assertThat(wordWrap.wrap("longerword", 6), is("longer\nword"));
     }
 }
