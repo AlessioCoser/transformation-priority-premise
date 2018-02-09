@@ -37,12 +37,6 @@ public class WordWrapKataTest {
     }
 
     @Test
-    public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
-        assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
-        assertThat(wordWrap.wrap("wrap here", 6), is("wrap\nhere"));
-    }
-
-    @Test
     public void WordLongerThanLengthBreaksAtLength() throws Exception {
         assertThat(wordWrap.wrap("longword", 4), is("long\nword"));
         assertThat(wordWrap.wrap("longerword", 6), is("longer\nword"));
@@ -51,5 +45,16 @@ public class WordWrapKataTest {
     @Test
     public void WordLongerThanTwiceLengthShouldBreakTwice() throws Exception {
         assertThat(wordWrap.wrap("verylongword", 4), is("very\nlong\nword"));
+    }
+
+    @Test
+    public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
+        assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
+        assertThat(wordWrap.wrap("wrap here", 6), is("wrap\nhere"));
+    }
+
+    @Test
+    public void ThreeWordsEachLongerThanLimitShouldWrap() throws Exception {
+        assertThat(wordWrap.wrap("word word word", 6), is("word\nword\nword"));
     }
 }
