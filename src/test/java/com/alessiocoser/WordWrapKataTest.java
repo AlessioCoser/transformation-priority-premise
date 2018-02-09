@@ -1,6 +1,7 @@
 package com.alessiocoser;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -33,5 +34,11 @@ public class WordWrapKataTest {
     @Test
     public void OneShortWordShouldNotWrap() throws Exception {
         assertThat(wordWrap.wrap("word", 5), is("word"));
+    }
+
+    @Ignore
+    @Test
+    public void TwoWordsLongerThanLimitShouldWrap() throws Exception {
+        assertThat(wordWrap.wrap("word word", 6), is("word\nword"));
     }
 }
