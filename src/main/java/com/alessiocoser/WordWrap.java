@@ -22,7 +22,7 @@ public class WordWrap {
         if (text.length() <= length)
             return text;
 
-        int space = text.substring(0, length).lastIndexOf(" ");
+        int space = text.substring(0, length + 1).lastIndexOf(" ");
         if (space >= 0) {
             return breakBetween(text, space, space + 1);
         }
