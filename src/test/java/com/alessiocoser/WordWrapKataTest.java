@@ -50,4 +50,9 @@ public class WordWrapKataTest {
     public void ThreeWordsEachLongerThanLimitShouldWrap() throws Exception {
         assertThat(WordWrap.wrap("word word word", 6), is("word\nword\nword"));
     }
+
+    @Test
+    public void ThreeWordsJustOverTheLimitShouldBreakAtSecond() throws Exception {
+        assertThat(WordWrap.wrap("word word word", 11), is("word word\nword"));
+    }
 }
