@@ -24,4 +24,9 @@ public class WordWrapKataTest {
     public void WrapEmptyStringReturnsEmptyString() throws Exception {
         assertThat(wordWrap.wrap("", 10), is(""));
     }
+
+    @Test
+    public void OneShortWordShouldNotWrap() throws Exception {
+        assertThat(wordWrap.wrap("word", 5), is("word"));
+    }
 }
